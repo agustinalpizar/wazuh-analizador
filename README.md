@@ -60,3 +60,11 @@ node --test tests/analyzer.test.js
 - La escala de niveles viene de la documentación oficial (<https://documentation.wazuh.com/current/user-manual/ruleset/rules/rules-classification.html>); el color del nivel es solo orientativo.
 - El ejemplo es **ficticio** y está modelado a partir del formato habitual de Wazuh; sus nombres de campo (p. ej. `data.dstuser`) conviene contrastarlos con una alerta real de tu versión antes de generalizar.
 - No consulta reglas, reputación de IP ni inventarios: eso queda como paso manual.
+
+## Proyecto relacionado
+
+[**Nexo Lab**](https://github.com/agustinalpizar/nexo-lab): panel local para monitorizar y operar un laboratorio de VirtualBox (incluye un servidor Wazuh). Comparten el tema de leer alertas, pero no están integrados.
+
+## Licencia
+
+[MIT](LICENSE) © 2026 Agustín Alpízar Hernández.
