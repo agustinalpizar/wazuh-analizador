@@ -1,0 +1,5 @@
+{
+  "timestamp": "2026-10-04T22:13:07.512+0000",
+  "rule": { "id": "5763", "level": 10, "description": "falta la coma",
+  "agent": { "name": "srv-demo-01" }
+}

@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Sin conexiones salientes: la propia página las bloquea. -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self' file:; style-src 'self' file:; img-src data:; connect-src 'none'; base-uri 'none'; form-action 'none'">
+  <title>Analizador de alertas Wazuh</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="css/styles.css?v=1791242536">
+</head>
+<body>
+  <header class="top">
+    <h1>Analizador de alertas Wazuh</h1>
+    <p>Herramienta educativa y local. Separa lo que <strong>dice la alerta</strong> de lo que <strong>podría significar</strong>. No se conecta a Wazuh ni a internet y no guarda nada.</p>
+  </header>
+
+  <main>
+    <section class="card" aria-labelledby="entrada-t">
+      <h2 id="entrada-t">1. Evento a analizar</h2>
+      <label for="entrada">Pega aquí un evento JSON de Wazuh</label>
+      <textarea id="entrada" rows="10" spellcheck="false" autocomplete="off" autocapitalize="off" placeholder='{ "timestamp": "...", "rule": { "id": "...", "level": 0, "description": "..." }, "agent": { ... } }'></textarea>
+      <div class="actions">
+        <button id="analizar" type="button" class="primary">Analizar</button>
+        <button id="ejemplo" type="button">Cargar ejemplo ficticio</button>
+        <label class="btn" for="archivo">Cargar archivo JSON</label>
+        <input id="archivo" type="file" accept=".json,application/json" hidden>
+        <button id="limpiar" type="button" class="ghost">Limpiar todo</button>
+      </div>
+      <p id="estado-archivo" class="hint" aria-live="polite"></p>
+      <div id="errores" role="alert" hidden></div>
+    </section>
+
+    <div id="resultado" aria-live="polite"></div>
+  </main>
+
+  <footer>
+    <p>Los datos permanecen en esta pestaña y se pierden al recargar. Una alerta indica que una regla de detección se cumplió; no es prueba definitiva de un ataque.</p>
+  </footer>
+
+  <script src="js/sample.js?v=1791242536"></script>
+  <script src="js/analyzer.js?v=1791242536"></script>
+  <script src="js/app.js?v=1791242536"></script>
+</body>
+</html>
